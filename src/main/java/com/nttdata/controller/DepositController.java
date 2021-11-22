@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nttdata.model.Deposit;
-import com.nttdata.model.Withdrawal;
 import com.nttdata.service.IDepositService;
 
 import reactor.core.publisher.Flux;
