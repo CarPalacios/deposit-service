@@ -19,17 +19,14 @@ public class Deposit {
 	@Id
 	private String id;
 	
-	@Field(name = "account")
-	private Account account;
+	@Field(name = "cardNumber")
+	private String cardNumber;
 	
 	@Field(name = "amount")
 	private Double amount;
-	
-	@Field(name = "Purchase")
-	private Purchase purchase;
 		
 	@Field(name = "description")
-	private String description = "";
+	private String description;
 
 	@Field(name = "depositDate")
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
