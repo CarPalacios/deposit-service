@@ -1,35 +1,33 @@
 package com.nttdata.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.time.LocalDateTime;
-
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonInclude;
-
-import lombok.Data;
-
+/**Se crea la clase Deposit donde se declaran las variables.*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @Document(collection = "deposit")
 @Data
 public class Deposit {
-	
-	@Id
-	private String id;
-	
-	@Field(name = "cardNumber")
-	private String cardNumber;
-	
-	@Field(name = "amount")
-	private Double amount;
-		
-	@Field(name = "description")
-	private String description;
+  
+  @Id
+  private String id;
+  
+  @Field(name = "cardNumber")
+  private String cardNumber;
+  
+  @Field(name = "amount")
+  private Double amount;
+    
+  @Field(name = "description")
+  private String description;
 
-	@Field(name = "depositDate")
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime depositDate = LocalDateTime.now();
+  @Field(name = "depositDate")
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+  private LocalDateTime depositDate = LocalDateTime.now();
 
 }
